@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "ae6b86d0-8c92-497d-9547-c007e28a5b52",
+		"name": "NewCombin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "traer facturas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Cargar factura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo_servicio\": \"Telefonia/cable\",\r\n    \"descripcion_servicio\": \"Personal/Flow\",\r\n    \"fecha_vencimiento\": \"2021-12-30\",\r\n    \"importe_servicio\": 300.45,\r\n    \"status_del_pago\": \"Pendiente\",\r\n    \"codigo_barras\": 779205778909\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.132:8000/factura",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"132"
+					],
+					"port": "8000",
+					"path": [
+						"factura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pagar factura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.132:8000/factura/pago",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"132"
+					],
+					"port": "8000",
+					"path": [
+						"factura",
+						"pago"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
